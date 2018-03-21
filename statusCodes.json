@@ -1,0 +1,8 @@
+{
+  "success" : 200,
+  "error" : 400,
+  "dbConnectionError" : 300,
+  "selectQueryError" : 301,
+  "dbUpdateError" : 302,
+  "recordInserted" : 303
+}

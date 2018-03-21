@@ -1,0 +1,12 @@
+{
+  "success" : "Succesful",
+  "error" : "Error",
+  "dbConnectionError" : "Error while connecting database",
+  "dbUpdateError" : "Error while updating database",
+  "dpSelectionError" : "Error while getting results from database",
+  "showingRecords"  : "showing records ",
+  "inserted" : "data inserted successfully",
+  "insertionError" : "error while inserting records",
+  "removed" : "removed successfully",
+  "updated" : "updated successfully"
+}
