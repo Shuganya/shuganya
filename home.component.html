@@ -1,0 +1,111 @@
+<h1 align="center"> Employee Details </h1>
+<div align="center">
+  <form class="form-horizontal" name="empForm">
+    <div class="form-group" [hidden]='flag' id="empid">
+      <label class="control-label col-sm-4">Employee Id : </label>
+      <div class="col-sm-4">
+        <input type="text" [(ngModel)]="model.id" class="form-control" name="EmpId" readonly="true">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">Name : </label>
+      <div class="col-sm-4">
+        <input type="text" [(ngModel)]="model.empname" class="form-control" name="Empname" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">Age :</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control" [(ngModel)]="model.age" name="age" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">Gender:</label>
+      <div class="col-sm-4">
+        <input type="radio" name="gender" value="male" checked [(ngModel)]="model.gender">Male<br>
+        <input type="radio" name="gender" value="female" [(ngModel)]="model.gender">Female<br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">Designation :</label>
+      <div class="col-sm-4">
+        <select name="designation" class="form-control" [(ngModel)]="model.designation" required>
+                <option value="Junior Software Engineer">Junior Software Engineer</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Senior Software Engineer">Senior Software Engineer</option>
+                <option value="Manager">Manager</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4"> Department:</label>
+      <div class="col-sm-4">
+        <select name="department" class="form-control" [(ngModel)]="model.department" required>
+                <option value="India Delivery">India Delivery</option>
+                <option value="US Delivery">US Delivery</option>
+                <option value="Sales">Sales</option>
+                <option value="QA">QA</option>
+                <option value="Business Analyst">Business Analyst</option>
+                <option value="Research and Development">Research and Development</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-4">
+        <button (click)=" save()" class="btn btn-default save">Save/Update</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+<div align="center">
+  <table width="60%" class="table table-striped">
+    <tr>
+      <th>
+        Employee Id
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Age
+      </th>
+      <th>
+        Gender
+      </th>
+      <th>
+        Designation
+      </th>
+      <th>
+        Department
+      </th>
+      <th>
+
+      </th>
+    </tr>
+    <!-- //For Loop Starts -->
+    <tr *ngFor="let res of employee;let i = index">
+      <td> {{res.EmpId}} </td>
+      <td>{{res.Name}} </td>
+      <td>{{ res.Age}}</td>
+      <td> {{res.Gender}} </td>
+      <td>{{res.Designation}} </td>
+      <td> {{res.Department}} </td>
+      <td><a (click)="edit(i)" class="glyphicon glyphicon-pencil edit" style="padding-left: 11px;
+    padding-right: 20px;">  </a>
+        <a (click)="delete(res.EmpId,i)" class="glyphicon glyphicon-trash"> </a>
+      </td>
+    </tr>
+    <!-- End of for loop -->
+    <!-- <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td><a (click)="newEmployee()" class="glyphicon glyphicon-plus" style="padding:0 0 0 10px;"> </a>
+      </td>
+    </tr> -->
+  </table>
+</div>
